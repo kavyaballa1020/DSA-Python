@@ -11,4 +11,3 @@ def balanced_parenthesis(str):
             stack.append(char)
     return not stack
 print(balanced_parenthesis("({[]})"))
-print("Hello")
