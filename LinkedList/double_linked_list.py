@@ -114,6 +114,21 @@ class DoublyLinkedList:
             print(temp.data, end=" <-> ")
             temp = temp.prev
         print("None")
+    
+    def reverse(self):
+        if self.head is None:  
+            print("List is empty")
+            return
+        temp = None
+        current = self.head
+        prevnode= None
+        while current:
+            nextnode=current.next
+            current.next=prevnode
+            current.prev=nextnode
+            prevnode=current
+            current=nextnode
+        self.head=prevnode
         
 dll = DoublyLinkedList()
 
@@ -138,4 +153,13 @@ dll.posInsert(25, 3)
 dll.display_forward()
 
 dll.posdelete(1)
+dll.display_forward()
+
+dll.insert_at_beginning(5)
+dll.insert_at_end(50)
+dll.insert_at_beginning(90)
+dll.insert_at_end(100)
+dll.display_forward()
+
+dll.reverse()
 dll.display_forward()
