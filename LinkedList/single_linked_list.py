@@ -81,6 +81,18 @@ class singly_linked_list:
                 print(temp.data,end=" --> ")
                 temp=temp.next
             print()
+    def reverse(self):
+        if self.head==None:
+            print("List is empty")
+            return
+        prev=None
+        curr=self.head
+        while curr:
+            next=curr.next
+            curr.next=prev
+            prev=curr
+            curr=next
+        self.head=prev
 l=singly_linked_list()
 l.insert_at_beginning(10)
 l.insert_at_beginning(20)
@@ -92,7 +104,14 @@ l.delete_at_begin()
 l.display()
 l.delete_at_end()
 l.display()
-l.posInsert(80,4)
+l.posInsert(80,3)
 l.display()
 l.posDelete(1)
+l.display()
+l.insert_at_end(90)
+l.insert_at_end(100)
+l.insert_at_end(110)
+l.insert_at_end(120)
+l.display()
+l.reverse()
 l.display()
